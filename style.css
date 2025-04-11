@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left .logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #111;
+}
+
+.nav-right a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-right a:hover {
+  color: #007acc;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.hero-image img {
+  width: 300px;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.projects-section,
+.about-section,
+.contact-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Adjusted to 300px for bigger project cards */
+  gap: 2rem;
+}
+
+.project-card {
+  padding: 2rem; /* Increased padding for bigger buttons */
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, scale 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* Set height to make them mobile-sized */
+}
+
+.project-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.project-card:hover img {
+  transform: scale(1.1); /* Slight zoom on image when hovering over card */
+}
+
+.contact-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+  color: #007acc;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #007acc;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.resume-button:hover {
+  background: #005fa3;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f5f5f5;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Ensures smooth scroll for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjusting the Contact Section visibility for smoother interaction */
+#contact {
+  display: block;
+  visibility: hidden;
+}
+
+.nav-right a[href="#contact"]:focus + #contact {
+  visibility: visible;
+}
+.project-card {
+  position: relative;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures the zoomed-in image does not overflow */
+  transition: all 0.3s ease; /* Adds smooth transition */
+  cursor: pointer;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth scaling and shadow */
+}
+
+.project-card:hover img {
+  transform: scale(1.1); /* Zooms the image in by 10% */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Lift the whole card up slightly */
+}
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #007acc;
+}
+
+/* If sections are within the same page */
+#about,
+#projects,
+#contact {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  scroll-margin-top: 80px; /* Adds spacing to the top when you scroll to a section */
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- AOS Library for Scroll Animations -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="#home" class="logo">Your Name</a>
+      </div>
+      <div class="nav-right">
+        <a href="About.html">About</a>
+        <a href="#projects">Projects</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+
+    <header id="home" class="hero">
+      <div class="hero-text">
+        <h1>Product Design. Interfaces. Systems. Strategy. UX. & More</h1>
+      </div>
+    </header>
+
+    <section id="projects" class="projects-section">
+      <h2 class="section-title" data-aos="fade-up">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="zoom-in">
+          <a href="project1.html">
+            <img src="assets/project1.jpg" alt="Project 1 Image" />
+            <h3>Project 1</h3>
+            <p>Short description of your project or thesis work.</p>
+          </a>
+        </div>
+        <div class="project-card" data-aos="zoom-in">
+          <a href="project2.html">
+            <img src="assets/project2.jpg" alt="Project 2 Image" />
+            <h3>Project 2</h3>
+            <p>Another project or research contribution.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-icons">
+        <a href="mailto:youremail@example.com">📧</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">🔗</a>
+        <a href="https://github.com/yourgithub" target="_blank">💻</a>
+      </div>
+      <a href="resume.pdf" class="resume-button" target="_blank"
+        >Download Resume</a
+      >
+    </section>
+
+    <footer>
+      <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init(); // Initialize AOS
+    </script>
+  </body>
+</html>
