@@ -1,0 +1,36 @@
+/* timeline.css */
+.timeline {
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  padding-left: 0;
+  border-left: none;
+  position: relative;
+}
+
+.timeline-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #5dade2; /* light blue */
+  margin-bottom: 5px;
+}
+
+.course-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.institution {
+  font-style: italic;
+  color: #666;
+}
+
+.timeline-date {
+  font-size: 14px;
+  color: #999;
+  margin-top: 5px;
+}

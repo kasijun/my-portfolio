@@ -5,39 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="timeline.css" />
   </head>
   <body>
     <!-- ✅ Only one navbar now -->
     <nav class="navbar">
       <div class="nav-left">
-        <a href="index.html" class="logo">Your Name</a>
+        <a href="index.html" class="logo">Junu Kasim</a>
       </div>
       <div class="nav-right">
-        <a href="About.html">About</a>
         <a href="index.html">Projects</a>
+        <a href="About.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
     </nav>
+    <div class="page-content">
+      <div class="page-content">
+        <!-- About Section -->
+        <section class="about-section">
+          <div
+            class="hero"
+            style="
+              display: flex;
+              flex-direction: row;
+              gap: 40px;
+              padding: 40px;
+              max-width: 1000px;
+              margin: auto;
+              font-family: Arial, sans-serif;
+              line-height: 1.8;
+              align-items: center;
+              flex-wrap: wrap;
+            "
+          >
+            <!-- Bigger Circular Image with Full Face and Hair -->
+            <div class="hero-image" style="flex: 1; text-align: center">
+              <img
+                src="./assets/junu.jpg"
+                alt="Junu Kasim"
+                style="
+                  width: 420px;
+                  height: 420px;
+                  object-fit: cover;
+                  object-position: top;
+                  border-radius: 50%;
+                  box-shadow: none;
+                "
+              />
+            </div>
+            <div class="hero-text" style="text-align: justify">
+              <h1><strong>Hi, I'm Junu Kasim</strong></h1>
+              <p>
+                An engineer with over seven years of experience in the
+                semiconductor industry, including four years specializing in
+                physical design. My career journey has taken me through diverse
+                roles and projects, from hands-on tapeouts at advanced
+                technology nodes to academic research and design exploration.
+              </p>
+              <p>
+                Most recently, I completed my Master’s degree in Integrated
+                Circuits and Systems Design, where I deepened my expertise in
+                both analog and digital design. During this program, I gained
+                extensive hands-on experience through practical labs using
+                industry-standard EDA tools. The curriculum offered me a solid
+                foundation in mixed-signal design, covering full-custom analog
+                layout, gate-level digital design in VHDL, and system-level
+                modeling.
+              </p>
+              <p>
+                For my Master’s thesis, I had the opportunity to work with
+                Infineon Technologies, investigating a state-of-the-art hybrid
+                switched-capacitor DC-DC converter. This research helped me
+                sharpen my skills in analog circuit blocks like gate drivers,
+                level shifters, and dead-time generators, while also improving
+                my simulation and modeling capabilities.
+              </p>
+              <p>
+                Prior to my thesis, I worked as a Research Intern, focusing on
+                automation in analog layout. I explored MAGICAL, an open-source
+                analog layout generator, and worked on porting a design in TSMC
+                65nm technology to this platform — gaining valuable experience
+                in design rule translation and layout generation.
+              </p>
+              <p>
+                Before pursuing my Master’s, I spent four years as a Physical
+                Design Engineer, contributing to multiple successful tapeouts. I
+                began my career at AMD, where I worked on block-level designs at
+                TSMC 7nm technology. I later joined MediaTek, contributing to
+                projects across nodes ranging from 55nm down to 5nm. My
+                responsibilities included the full flow from netlist to GDSII,
+                with a strong emphasis on meeting timing, area, and power goals.
+                I also had the opportunity to lead multiple blocks to tapeout,
+                further strengthening my project ownership and technical
+                leadership skills.
+              </p>
+              <p>
+                Over the years, I’ve developed a strong ability to work under
+                pressure, manage tight deadlines, and adapt quickly to new
+                environments and challenges. One of the most defining decisions
+                of my career was leaving a full-time job to pursue higher
+                education — a step that not only expanded my technical skill set
+                but also helped me grow personally by working and studying
+                across different countries and cultures.
+              </p>
+              <p>
+                I am now eager to apply this blend of academic and professional
+                experience to real-world design challenges, and I remain
+                committed to continuous learning and pushing the boundaries of
+                what’s possible in semiconductor technology.
+              </p>
+            </div>
+            <!-- <div
+              class="hero-image"
+              style="align-self: center; max-width: 300px"
+            >
+              <img
+                src="./assets/junu.jpg"
+                alt="Junu Kasim"
+                style="width: 150%; border-radius: 10px"
+              />
+            </div> -->
+          </div>
+        </section>
 
-    <section class="about-section">
-      <div class="hero">
-        <div class="hero-image">
-          <img src="./assets/junu.jpg" alt="Your Profile Picture" />
-        </div>
-        <div class="hero-text">
-          <h1>Hi, I'm [Your Name]</h1>
-          <p>
-            I'm passionate about [Design/Engineering/Technology].<br />
-            This is a short and clean introduction about yourself. You can
-            include your journey, interests, or goals. I'm passionate about
-            [Design/Engineering/Technology].<br />
-            This is a short and clean introduction about yourself. You can
-            include your journey, interests, or goals.
-          </p>
-        </div>
+        <!-- Experience & Education Section -->
+        <section id="experience" class="about-section">
+          <h2 class="section-title">Work Experience</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3 class="course-name">Mixed Signal Design Engineer</h3>
+              <p>
+                <span class="institution">Infineon Technologies Austria</span>
+              </p>
+              <p class="timeline-date">01/2024 – 02/2025</p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="course-name">Research Assistant</h3>
+              <p>
+                <span class="institution"
+                  >Carinthia University of Applied Sciences</span
+                >
+              </p>
+              <p class="timeline-date">04/2023 – 12/2023</p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="course-name">Summer Intern</h3>
+              <p>
+                <span class="institution">Infineon Technologies Austria</span>
+              </p>
+              <p class="timeline-date">09/2023 – 09/2023</p>
+            </div>
+            <div class="timeline-item">
+              <h3 class="course-name">Physical Design Engineer</h3>
+              <p>
+                <span class="institution">
+                  Synapse Techno Design Innovations Pvt. Ltd</span
+                >
+              </p>
+              <p class="timeline-date">05/2018 – 09/2022</p>
+            </div>
+          </div>
+
+          <h2 class="section-title">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Master’s Degree</h3>
+              <p>
+                <span class="course-name"
+                  >Integrated Systems and Circuits Design</span
+                ><br />
+                <span class="institution"
+                  >Carinthia University of Applied Sciences</span
+                >
+              </p>
+              <p class="timeline-date">2022 – 2025</p>
+            </div>
+
+            <div class="timeline-item">
+              <h3>Bachelor of Technology</h3>
+              <p>
+                <span class="course-name">Electronics and Communication</span
+                ><br />
+                <span class="institution">KMEA Engineering College</span>
+              </p>
+              <p class="timeline-date">2013 – 2017</p>
+            </div>
+
+            <div class="timeline-item">
+              <h3>Higher Secondary School</h3>
+              <p>
+                <span class="institution">MTHSS Kaloor</span>
+              </p>
+              <p class="timeline-date">2011 – 2013</p>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <footer>&copy; 2025 Your Name. All rights reserved.</footer>
+    </div>
+    <footer>&copy; 2025 Junu Kasim. All rights reserved.</footer>
   </body>
 </html>
