@@ -1,8 +1,12 @@
+html,
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: #fafafa;
   color: #333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -64,9 +68,9 @@ body {
   transition: transform 0.3s;
 }
 
-.hero-image img:hover {
+/*.hero-image img:hover {
   transform: scale(1.05);
-}
+}*/
 
 .section-title {
   font-size: 2rem;
@@ -92,8 +96,8 @@ body {
 }
 
 .project-card {
-  padding: 2rem; /* Increased padding for bigger buttons */
-  background: white;
+  padding: 0rem; /* Increased padding for bigger buttons */
+  background: transparent;
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, scale 0.3s;
@@ -102,7 +106,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 300px; /* Set height to make them mobile-sized */
+  text-align: center;
 }
 
 .project-card img {
@@ -111,6 +115,16 @@ body {
   object-fit: cover;
   border-radius: 1rem;
   transition: transform 0.3s;
+}
+
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
 }
 
 .project-card:hover {
@@ -170,16 +184,6 @@ html {
 .nav-right a[href="#contact"]:focus + #contact {
   visibility: visible;
 }
-.project-card {
-  position: relative;
-  padding: 2rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Ensures the zoomed-in image does not overflow */
-  transition: all 0.3s ease; /* Adds smooth transition */
-  cursor: pointer;
-}
 
 .project-card img {
   width: 100%;
@@ -216,4 +220,25 @@ html {
   max-width: 1000px;
   margin: auto;
   scroll-margin-top: 80px; /* Adds spacing to the top when you scroll to a section */
+}
+/* Animation */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  flex: 1;
+}
+.page-content {
+  animation: floatIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+  opacity: 0; /* Start hidden */
+  flex: 1; /* Allow the content to grow and fill the space */
 }
