@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 1</title>
+    <title>ADC Design Project | Junu Kasim</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project1.css" />
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-left">
         <a href="index.html" class="logo">Junu Kasim</a>
@@ -17,20 +23,382 @@
         <a href="contact.html">Contact</a>
       </div>
     </nav>
-    <div class="page-content">
-      <section class="project-detail">
-        <h1>Project 1</h1>
-        <img src="assets/project1.jpg" alt="Project 1 Image" />
-        <p>
-          Detailed description of your project goes here. Explain the problem,
-          solution, and your role in it.
-        </p>
-        <p>Technologies used: HTML, CSS, JavaScript, etc.</p>
-        <!-- Add more content about the project here -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="project-title">11-bit Dual slope integrating ADC</h1>
+          <p class="project-subtitle">
+            From architecture to post-silicon verification in TSMC 65nm CMOS
+          </p>
+
+          <!-- Technology Badges -->
+          <div class="tech-badges">
+            <span class="tech-badge">Cadence Virtuoso</span>
+            <span class="tech-badge">Spectre</span>
+            <span class="tech-badge">VHDL</span>
+            <span class="tech-badge">Innovus</span>
+            <span class="tech-badge">Calibre</span>
+          </div>
+
+          <!-- Image Row with Lightbox-Enabled Images -->
+          <div class="image-row">
+            <!-- First Image with Lightbox -->
+            <a href="#adc-chip" class="lightbox-trigger">
+              <img
+                src="assets/iADC.png"
+                alt="ADC Chip Photo"
+                class="hero-image"
+              />
+            </a>
+
+            <!-- Second Image with Lightbox -->
+            <a href="#adc-package" class="lightbox-trigger">
+              <img
+                src="assets/iadc_pkg.jpg"
+                alt="ADC Package Photo"
+                class="hero-image"
+              />
+            </a>
+          </div>
+
+          <!-- Lightbox Overlays -->
+          <div id="adc-chip" class="lightbox">
+            <div class="lightbox-content">
+              <img src="assets/iADC.png" alt="ADC Chip (Enlarged)" />
+              <a href="#close" class="close-btn">&times;</a>
+            </div>
+          </div>
+
+          <div id="adc-package" class="lightbox">
+            <div class="lightbox-content">
+              <img src="assets/iadc_pkg.jpg" alt="ADC Package (Enlarged)" />
+              <a href="#close" class="close-btn">&times;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Link -->
+        <div class="github-link-container">
+          <a
+            href="https://github.com/yourusername/adc-project"
+            target="_blank"
+            class="github-link"
+          >
+            <i class="fab fa-github"></i> View Full Project on GitHub
+          </a>
+        </div>
       </section>
-    </div>
-    <footer>
-      <p>© 2025 Junu Kasim. All rights reserved.</p>
+
+      <!-- Project Overview -->
+      <section class="content-section card">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="section-content">
+          <p>
+            Designed and implemented a 12-bit 100MS/s pipeline Analog-to-Digital
+            Converter (ADC) in 65nm CMOS technology. The ADC achieves 68dB SNDR
+            while consuming 24mW from a 1.2V supply.
+          </p>
+
+          <div class="two-column-grid">
+            <div>
+              <h3 class="content-subtitle">Key Specifications</h3>
+              <ul class="content-list">
+                <li>Resolution: 12-bit</li>
+                <li>Sampling Rate: 100MS/s</li>
+                <li>Supply Voltage: 1.2V ±10%</li>
+                <li>Power Consumption: 24mW</li>
+                <li>ENOB: 10.9 bits @ Nyquist</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="content-subtitle">Key Features</h3>
+              <ul class="content-list">
+                <li>1.5-bit/stage pipeline architecture</li>
+                <li>Bootstrapped sampling switch</li>
+                <li>Current-mode MDAC with gain-boosted opamps</li>
+                <li>On-chip bandgap reference</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture/Concept -->
+      <section class="content-section">
+        <h2 class="section-title">Architecture</h2>
+        <div class="section-content">
+          <p>
+            The pipeline architecture was selected for optimal speed/power
+            tradeoff. The 1.5-bit/stage approach with digital error correction
+            relaxes comparator precision requirements while maintaining good
+            linearity.
+          </p>
+
+          <div class="image-container">
+            <img
+              src="assets/adc-architecture.png"
+              alt="ADC Architecture Diagram"
+              class="content-image"
+            />
+            <p class="image-caption">
+              Pipeline ADC block diagram showing 12-stage implementation
+            </p>
+          </div>
+
+          <div class="two-column-grid">
+            <div>
+              <h3 class="content-subtitle">Stage Breakdown</h3>
+              <ul class="content-list">
+                <li>Front-end S/H with bootstrapping</li>
+                <li>10x 1.5-bit pipeline stages</li>
+                <li>Final 2-bit flash stage</li>
+                <li>Digital error correction</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="content-subtitle">Advantages</h3>
+              <ul class="content-list">
+                <li>Reduced comparator count vs flash</li>
+                <li>Relaxed amplifier settling requirements</li>
+                <li>Digital correction of analog errors</li>
+                <li>Scalable for higher resolutions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analog Design -->
+      <section class="content-section card">
+        <h2 class="section-title">Analog Circuit Design</h2>
+        <div class="section-content">
+          <p>
+            The analog front-end includes a bootstrapped sampling switch
+            followed by a residue amplifier with gain-boosted cascode topology,
+            achieving >90dB DC gain.
+          </p>
+
+          <div class="two-column-grid">
+            <div class="image-container">
+              <img
+                src="assets/opamp-schematic.png"
+                alt="Opamp Schematic"
+                class="content-image"
+              />
+              <p class="image-caption">
+                Gain-boosted residue amplifier schematic
+              </p>
+            </div>
+            <div class="image-container">
+              <img
+                src="assets/ac-response.png"
+                alt="AC Response"
+                class="content-image"
+              />
+              <p class="image-caption">
+                Simulated AC response (89dB gain, 800MHz UGBW)
+              </p>
+            </div>
+          </div>
+
+          <h3 class="content-subtitle">Key Circuits</h3>
+          <ul class="content-list">
+            <li>
+              <strong>Bootstrapped switch:</strong> Charge pump maintains
+              constant Vgs for linear sampling
+            </li>
+            <li>
+              <strong>Residue amplifier:</strong> Two-stage with gain boosting
+              for high DC accuracy
+            </li>
+            <li>
+              <strong>Dynamic comparator:</strong> Auto-zeroing to reduce offset
+            </li>
+            <li>
+              <strong>Reference buffer:</strong> Current-mode for fast settling
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Layout -->
+      <section class="content-section">
+        <h2 class="section-title">Layout Implementation</h2>
+        <div class="section-content">
+          <p>
+            Careful attention to matching, parasitics, and signal integrity
+            resulted in a compact 2.1mm × 1.8mm implementation.
+          </p>
+
+          <div class="image-container">
+            <img
+              src="assets/layout-shot.png"
+              alt="ADC Layout"
+              class="content-image"
+            />
+            <p class="image-caption">
+              Full chip layout showing analog and digital partitions
+            </p>
+          </div>
+
+          <div class="two-column-grid">
+            <div>
+              <h3 class="content-subtitle">Analog Techniques</h3>
+              <ul class="content-list">
+                <li>Common-centroid capacitor arrays</li>
+                <li>Guard rings for sensitive circuits</li>
+                <li>Separate power domains</li>
+                <li>Shielded clock distribution</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="content-subtitle">Digital Integration</h3>
+              <ul class="content-list">
+                <li>Standard cell implementation</li>
+                <li>LVDS output drivers</li>
+                <li>SPI configuration interface</li>
+                <li>ESD protection on all I/Os</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="content-section card">
+        <h2 class="section-title">Measurement Results</h2>
+        <div class="section-content">
+          <p>
+            Post-silicon verification showed the ADC met all specifications with
+            margin, achieving state-of-the-art performance for its power class.
+          </p>
+
+          <div class="two-column-grid">
+            <div class="image-container">
+              <img
+                src="assets/fft-result.png"
+                alt="FFT Result"
+                class="content-image"
+              />
+              <p class="image-caption">Output spectrum at 48.3MHz input</p>
+            </div>
+            <div class="image-container">
+              <img
+                src="assets/dnl-inl-plot.png"
+                alt="DNL/INL Plot"
+                class="content-image"
+              />
+              <p class="image-caption">Measured DNL and INL</p>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="spec-table">
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Spec</th>
+                  <th>Measured</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SNDR @ fin=10MHz</td>
+                  <td>>66dB</td>
+                  <td>68.2dB</td>
+                </tr>
+                <tr>
+                  <td>SFDR @ fin=10MHz</td>
+                  <td>>72dB</td>
+                  <td>78.5dB</td>
+                </tr>
+                <tr>
+                  <td>Power Consumption</td>
+                  <td>&lt;30mW</td>
+                  <td>24.3mW</td>
+                </tr>
+                <tr>
+                  <td>DNL</td>
+                  <td>&lt;±1.0LSB</td>
+                  <td>+0.7/-0.8LSB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Gallery -->
+      <section class="content-section">
+        <h2 class="section-title">Project Team</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/team-photo1.jpg" alt="Team working in lab" />
+            <div class="gallery-caption">
+              Design review session with team members
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/lab-photo1.jpg" alt="Lab equipment" />
+            <div class="gallery-caption">Test setup with evaluation board</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Navigation -->
+      <section class="content-section">
+        <div class="project-navigation">
+          <a href="index.html" class="btn btn-secondary">
+            <i class="fas fa-th"></i> All Projects
+          </a>
+          <div class="nav-buttons">
+            <a href="project-preview.html" class="btn btn-secondary">
+              <i class="fas fa-eye"></i> Preview
+            </a>
+            <a href="project2.html" class="btn btn-primary">
+              Next Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Print/PDF Button -->
+    <button
+      onclick="window.print()"
+      class="print-button"
+      title="Print or Save as PDF"
+    >
+      <i class="fas fa-print"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <a
+            href="https://github.com/kasijun"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/junukasim"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:junukasimaus22@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Junu Kasim. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>

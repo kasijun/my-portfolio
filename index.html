@@ -2,19 +2,23 @@
 <html lang="en">
   <head>
     <!-- AOS Library for Scroll Animations -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
 
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <!-- Your Custom Styles -->
@@ -38,7 +42,9 @@
       <!-- Hero Section -->
       <header id="home" class="hero">
         <div class="hero-text">
-          <h1>Product Design. Interfaces. Systems. Strategy. UX. & More</h1>
+          <h1>
+            💡 IC Design. Physical Design. Modeling. Simulations. RTL. & More
+          </h1>
         </div>
       </header>
 
@@ -47,27 +53,73 @@
         <div class="projects-grid">
           <div class="project-card" data-aos="zoom-in">
             <a href="project1.html">
-              <img src="assets/project1.jpg" alt="Project 1 Image" />
-              <h3>Project 1</h3>
+              <img src="assets/adc.jpg" alt="adc Image" />
+              <h3>ADC</h3>
             </a>
           </div>
           <div class="project-card" data-aos="zoom-in">
             <a href="project2.html">
-              <img src="assets/project2.jpg" alt="Project 2 Image" />
-              <h3>Project 2</h3>
+              <img src="assets/final_dac_layout.png" alt="dac image" />
+              <h3>DAC</h3>
+            </a>
+          </div>
+          <div class="project-card" data-aos="zoom-in">
+            <a href="project3.html">
+              <img src="assets/final_dac_layout.png" alt="Project 3 Image" />
+              <h3>Processor</h3>
             </a>
           </div>
         </div>
       </section>
+
+      <!-- Personal Introduction Section -->
+      <section class="about-intor-content" data-aos="fade-up">
+        <div class="about-intro">
+          <p>
+            I'm a tech enthusiast who loves exploring all corners of electronics
+            — from analog and digital design to system-level thinking. I'm
+            passionate about contributing to industry or research projects that
+            push boundaries, and I have a special interest in EDA tool
+            methodology development. I truly believe that understanding the
+            tools we use can make a real difference in design efficiency and
+            innovation.
+          </p>
+          <a href="About.html" class="about-link">More about me</a>
+        </div>
+      </section>
     </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 Junu Kasim. All rights reserved.</p>
+    <!-- footer-->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <a
+            href="https://github.com/kasijun"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/junukasim"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:junukasimaus22@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Junu Kasim. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- AOS Script -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script> <!-- Your custom logic -->
-    
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
