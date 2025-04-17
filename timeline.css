@@ -1,36 +1,280 @@
-/* timeline.css */
-.timeline {
-  padding-left: 0;
-  margin-top: 20px;
+/* Left-Aligned Timeline */
+.timeline-left {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .timeline-item {
   margin-bottom: 25px;
-  padding-left: 0;
-  border-left: none;
-  position: relative;
 }
 
-.timeline-item h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #5dade2; /* light blue */
-  margin-bottom: 5px;
+.timeline-box {
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-color);
+  transition: transform 0.3s ease;
 }
 
-.course-name {
-  font-weight: bold;
-  font-size: 16px;
-  color: #333;
+.timeline-box:hover {
+  transform: translateY(-3px);
 }
 
-.institution {
-  font-style: italic;
-  color: #666;
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.job-title {
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.company {
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.5;
 }
 
 .timeline-date {
-  font-size: 14px;
-  color: #999;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.certificate-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.certificate-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .certificate-link {
+    margin-top: 8px;
+  }
+
+  .timeline-box {
+    padding: 20px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+
+.modal-content {
+  background: white;
+  margin: 5% auto;
+  padding: 25px;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.certificate-container {
+  position: relative;
+  margin-top: 20px;
+}
+
+.blurred-certificate {
+  width: 100%;
+  height: auto;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  border: 1px solid #ddd;
+}
+
+.request-access {
+  background: #333; /* Dark background */
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+.request-access p {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Prevent form expansion */
+#certificate-request-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 100%;
+}
+
+#certificate-request-form input[type="email"] {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#certificate-request-form button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Updated Form Styles */
+.email-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+.email-input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  background: #000; /* Black background */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #333; /* Slightly lighter black on hover */
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .form-group {
+    flex-direction: column;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    width: 100%;
+  }
+}
+/* Success Modal */
+#success-modal .modal-content {
+  max-width: 400px;
+  animation: fadeIn 0.3s;
+}
+.error-message {
+  color: #ff4444;
+  font-size: 0.9rem;
   margin-top: 5px;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State */
+.submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+.submit-btn.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Resume Link Styling */
+.resume-link {
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.resume-link a {
+  color: var(--primary-color); /* Or your preferred link color */
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.resume-link a:hover {
+  color: #2a5c8a; /* Darker shade on hover */
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* If you want to style the smiley */
+.resume-link::after {
+  content: " :)";
+  display: inline;
 }

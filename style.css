@@ -1,24 +1,30 @@
+/* ===== RESET & BASE STYLES ===== */
 html,
 body {
   margin: 0;
+  padding: 0;
   font-family: "Inter", sans-serif;
   background: #fafafa;
   color: #333;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* ===== NAVIGATION ===== */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  padding: 0.5rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 60px;
 }
 
 .nav-left .logo {
@@ -28,37 +34,85 @@ body {
   color: #111;
 }
 
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
 .nav-right a {
-  margin-left: 1.5rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color 0.3s;
+  padding: 0.5rem 0;
+  position: relative;
 }
 
-.nav-right a:hover {
+.nav-right a:hover,
+.nav-right a.active {
   color: #007acc;
 }
 
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007acc;
+  transition: width 0.3s ease;
+}
+
+.nav-right a:hover::after,
+.nav-right a.active::after {
+  width: 100%;
+}
+
+/* ===== PAGE CONTENT ===== */
+.page-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem 2rem; /* Adjusted for navbar */
+  animation: floatIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HERO SECTION ===== */
 .hero {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center; /* Center the content horizontally */
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: auto;
+  justify-content: flex-start;
+  padding: 2rem 0;
   flex-wrap: wrap;
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: 0.5rem;
+  line-height: 1.2;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   color: #555;
+  line-height: 1.6;
 }
 
 .hero-image img {
@@ -68,77 +122,124 @@ body {
   transition: transform 0.3s;
 }
 
-/*.hero-image img:hover {
-  transform: scale(1.05);
-}*/
+/* ===== PROJECTS SECTION ===== */
+.projects-section {
+  padding: 2rem 0;
+}
 
 .section-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
-}
-
-.projects-section,
-.about-section,
-.contact-section {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(300px, 1fr)
-  ); /* Adjusted to 300px for bigger project cards */
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 3rem;
 }
 
 .project-card {
-  padding: 0rem; /* Increased padding for bigger buttons */
-  background: transparent;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, scale 0.3s;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  aspect-ratio: 1/1.2;
+  position: relative; /* Ensure this is set */
+  cursor: pointer; /* Changes cursor to indicate clickability */
+}
+
+.project-card a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3; /* Ensure it's above other elements */
+  /* transparent background */
+  background: transparent;
 }
 
 .project-card img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 1rem;
-  transition: transform 0.3s;
+  transition: all 0.4s ease;
 }
 
-.project-detail {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.project-card h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  color: white;
+  opacity: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
   text-align: center;
-  min-height: 100vh;
+  width: 100%;
+  padding: 0 1rem;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: 1rem;
+}
+
+/* Optional: Add hover effect to entire card */
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.project-card:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.7);
+}
+
+.project-card:hover h3 {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+/* ===== ABOUT & CONTACT SECTIONS ===== */
+.about-intro,
+.contact-section {
+  max-width: 700px;
+  margin: 0 auto;
   padding: 2rem;
 }
 
-.project-card:hover {
-  transform: scale(1.05); /* Zoom effect on hover */
+.about-intro p,
+.contact-section p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.project-card:hover img {
-  transform: scale(1.1); /* Slight zoom on image when hovering over card */
+.about-link {
+  color: #007acc;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.about-link:hover {
+  text-decoration: underline;
 }
 
 .contact-icons a {
   font-size: 1.5rem;
   margin-right: 1rem;
-  text-decoration: none;
   color: #333;
   transition: color 0.3s;
 }
@@ -149,7 +250,6 @@ body {
 
 .resume-button {
   display: inline-block;
-  margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   background: #007acc;
   color: white;
@@ -162,83 +262,68 @@ body {
   background: #005fa3;
 }
 
-footer {
+/* ===== FOOTER ===== */
+.site-footer {
   text-align: center;
-  padding: 2rem;
-  background: #f5f5f5;
-  font-size: 0.9rem;
-  color: #666;
+  padding: 2rem 0;
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+.footer-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.social-link {
+  color: #d1d5db;
+  transition: color 0.2s;
+  font-size: 1.25rem;
+}
+.social-link:hover {
+  color: white;
+}
+.copyright {
+  font-size: 0.875rem;
 }
 
-/* Ensures smooth scroll for navigation */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Adjusting the Contact Section visibility for smoother interaction */
-#contact {
-  display: block;
-  visibility: hidden;
-}
-
-.nav-right a[href="#contact"]:focus + #contact {
-  visibility: visible;
-}
-
-.project-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smooth scaling and shadow */
-}
-
-.project-card:hover img {
-  transform: scale(1.1); /* Zooms the image in by 10% */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
-}
-
-.project-card:hover {
-  transform: translateY(-5px); /* Lift the whole card up slightly */
-}
-.navbar a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar a:hover {
-  color: #007acc;
-}
-
-/* If sections are within the same page */
-#about,
-#projects,
-#contact {
-  padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-  scroll-margin-top: 80px; /* Adds spacing to the top when you scroll to a section */
-}
-/* Animation */
-@keyframes floatIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    height: 60px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .page-content {
+    padding: 5rem 1rem 1rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
-body {
-  flex: 1;
-}
-.page-content {
-  animation: floatIn 1s ease-out forwards;
-  animation-delay: 0.2s;
-  animation-fill-mode: both;
-  opacity: 0; /* Start hidden */
-  flex: 1; /* Allow the content to grow and fill the space */
+
+@media (max-width: 480px) {
+  .nav-right {
+    gap: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 }
