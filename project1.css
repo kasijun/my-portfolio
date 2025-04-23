@@ -172,7 +172,7 @@
   border: 1px solid var(--border-color);
   background-color: var(--white);
   padding: 0.5rem;
-  width: 100%;
+  width: 50%;
   height: auto;
 }
 
@@ -413,4 +413,41 @@
   justify-content: center;
   font-size: 24px;
   text-decoration: none;
+}
+
+/*legend for the iadc block diagram*/
+
+.legend {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 250px;
+  background-color: #f9f9f9;
+}
+.legend-item {
+  margin: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.legend-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+.analog:before {
+  background-color: #ff6b6b;
+}
+.digital:before {
+  background-color: #4ecdc4;
+}
+.afe:before {
+  background-color: #ffbe0b;
+}
+.top-level:before {
+  background-color: #8338ec;
 }
