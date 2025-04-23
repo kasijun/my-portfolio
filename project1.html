@@ -48,7 +48,7 @@
             <!-- First Image with Lightbox -->
             <a href="#adc-chip" class="lightbox-trigger">
               <img
-                src="assets/iADC.png"
+                src="assets/adc/iADC.png"
                 alt="ADC Chip Photo"
                 class="hero-image"
               />
@@ -57,7 +57,7 @@
             <!-- Second Image with Lightbox -->
             <a href="#adc-package" class="lightbox-trigger">
               <img
-                src="assets/iadc_pkg.jpg"
+                src="assets/adc/iadc_pkg.jpg"
                 alt="ADC Package Photo"
                 class="hero-image"
               />
@@ -67,14 +67,14 @@
           <!-- Lightbox Overlays -->
           <div id="adc-chip" class="lightbox">
             <div class="lightbox-content">
-              <img src="assets/iADC.png" alt="ADC Chip (Enlarged)" />
+              <img src="assets/adc/iADC.png" alt="ADC Chip (Enlarged)" />
               <a href="#close" class="close-btn">&times;</a>
             </div>
           </div>
 
           <div id="adc-package" class="lightbox">
             <div class="lightbox-content">
-              <img src="assets/iadc_pkg.jpg" alt="ADC Package (Enlarged)" />
+              <img src="assets/adc/iadc_pkg.jpg" alt="ADC Package (Enlarged)" />
               <a href="#close" class="close-btn">&times;</a>
             </div>
           </div>
@@ -83,7 +83,7 @@
         <!-- GitHub Link -->
         <div class="github-link-container">
           <a
-            href="https://github.com/yourusername/adc-project"
+            href="https://github.com/kasijun/11-bit-Integrating-Dual-Slope-ADC"
             target="_blank"
             class="github-link"
           >
@@ -97,55 +97,109 @@
         <h2 class="section-title">Project Overview</h2>
         <div class="section-content">
           <p>
-            Designed and implemented a 12-bit 100MS/s pipeline Analog-to-Digital
-            Converter (ADC) in 65nm CMOS technology. The ADC achieves 68dB SNDR
-            while consuming 24mW from a 1.2V supply.
+            Designed and implemented a 11-bit Dual Slop Analog-to-Digital
+            Converter (ADC) in TSMC 65nm CMOS technology.
           </p>
+          <p style="color: darkblue">
+            <strong>Design blocks:</strong> Bias generator, Operational
+            amplifier, Comparator, Transfer gates, R/C to form an integrator,
+            digital control logic, testing, top-level integration.
+          </p>
+          <ul>
+            <li><strong>Full-custom and semi-custom implementation</strong></li>
+            <li>
+              <strong>Fully implemented and verified for tape-out</strong>
+            </li>
+            <li><strong>Silicon finally characterised in lab</strong></li>
+          </ul>
 
+          <!-- Dual-slope ADC Principle Image -->
+          <div class="image-container">
+            <img
+              src="assets/adc/iadc_chip_block.png"
+              alt="Dual-slope ADC Principle"
+              class="content-image"
+              style="
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 60%;
+              "
+            />
+            <div class="image-caption">11 bit Dual-slope ADC Pin Diagram</div>
+          </div>
+
+          <!-- Key Specifications -->
           <div class="two-column-grid">
             <div>
-              <h3 class="content-subtitle">Key Specifications</h3>
+              <h3 class="content-subtitle">Specifications</h3>
               <ul class="content-list">
-                <li>Resolution: 12-bit</li>
-                <li>Sampling Rate: 100MS/s</li>
-                <li>Supply Voltage: 1.2V ±10%</li>
-                <li>Power Consumption: 24mW</li>
-                <li>ENOB: 10.9 bits @ Nyquist</li>
+                <li>Supply voltage: 1.2V</li>
+                <li>
+                  Input dynamic range (single ended) on Vip or Vin: 0.5V … 1V
+                </li>
+                <li>
+                  Technology: TSMC CMOS 65nm (nch_mac, pch_mac as main MOS
+                  devices)
+                </li>
+                <li>Reference voltages: 0.5V and 1V</li>
+                <li>Common mode voltage: 0.75V (for input and reference)</li>
+                <li>System clock: 50 MHz</li>
+                <li>Resolution: 10bit + sign</li>
               </ul>
             </div>
             <div>
-              <h3 class="content-subtitle">Key Features</h3>
+              <h3 class="content-subtitle">Implementation Highlights</h3>
               <ul class="content-list">
-                <li>1.5-bit/stage pipeline architecture</li>
-                <li>Bootstrapped sampling switch</li>
-                <li>Current-mode MDAC with gain-boosted opamps</li>
-                <li>On-chip bandgap reference</li>
+                <li>Biasing and analog frontend designed from scratch</li>
+                <li>Fully integrated digital control logic</li>
+                <li>Top-level testbench and lab verification</li>
+                <li>Final silicon behavior matched simulations</li>
               </ul>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Architecture/Concept -->
-      <section class="content-section">
-        <h2 class="section-title">Architecture</h2>
-        <div class="section-content">
-          <p>
-            The pipeline architecture was selected for optimal speed/power
-            tradeoff. The 1.5-bit/stage approach with digital error correction
-            relaxes comparator precision requirements while maintaining good
-            linearity.
-          </p>
-
+          <!-- Architecture/Concept -->
+          <section class="content-section">
+            <h2 class="section-title">Architecture</h2>
+            <div class="section-content">
+              <p>
+                The pipeline architecture was selected for optimal speed/power
+                tradeoff. The 1.5-bit/stage approach with digital error
+                correction relaxes comparator precision requirements while
+                maintaining good linearity.
+              </p>
+              <!-- Design Overview Section -->
+              <div class="image-container">
+                <h3 class="content-subtitle">Dual-slope ADC principle</h3>
+                <img
+                  src="assets/adc/iadc_dual_slope_principle.png"
+                  alt="Block Diagram"
+                  class="content-image"
+                  style="width: 800px; height: auto"
+                />
+                <div class="image-caption">
+                  Block diagram of the Dual-slope ADC
+                </div>
+              </div>
+            </div>
+          </section>
           <div class="image-container">
-            <img
-              src="assets/adc-architecture.png"
-              alt="ADC Architecture Diagram"
-              class="content-image"
-            />
-            <p class="image-caption">
-              Pipeline ADC block diagram showing 12-stage implementation
-            </p>
+            <div class="image-row">
+              <img
+                src="assets/adc/iadc_block_diagram.png"
+                alt="ADC Architecture Diagram"
+                class="content-image"
+                style="width: 600px; height: auto"
+              />
+              <img
+                src="assets/adc/iadc_block_legend.png"
+                alt="ADC Architecture Diagram"
+                class="content-image"
+                style="width: 250px; height: 250px"
+              />
+            </div>
+            <p class="image-caption">ADC block diagram</p>
           </div>
 
           <div class="two-column-grid">
