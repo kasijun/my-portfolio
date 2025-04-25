@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (emailLink) {
     emailLink.addEventListener("click", function () {
-      const email = "junukasimaus22@gmail.com";
+      const email = "kasimjunu@gmail.com";
       navigator.clipboard
         .writeText(email)
         .then(() => {

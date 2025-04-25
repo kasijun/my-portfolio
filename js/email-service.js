@@ -55,7 +55,7 @@ function handleFormSubmit(e) {
     .send("service_ersz7tq", "template_mu39fv4", {
       certificate_name: document.getElementById("certificate-name").value,
       requester_email: email,
-      recipient_email: "junukasimaus22@gmail.com",
+      recipient_email: "kasimjunu@gmail.com",
     })
     .then(() => {
       document.getElementById("success-modal").style.display = "block";
