@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 2</title>
+    <title>ADC Design Project | Junu Kasim</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project1.css" />
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-left">
-        <a href="index.html" class="logo">Your Name</a>
+        <a href="index.html" class="logo">Junu Kasim</a>
       </div>
       <div class="nav-right">
         <a href="index.html">Projects</a>
@@ -17,19 +23,242 @@
         <a href="contact.html">Contact</a>
       </div>
     </nav>
-    <div class="page-content">
-    <section class="project-detail">
-      <h1>Project 2</h1>
-      <img src="assets/project1.jpg" alt="Project 1 Image" />
-      <p>
-        Detailed description of your project goes here. Explain the problem,
-        solution, and your role in it.
-      </p>
-      <p>Technologies used: HTML, CSS, JavaScript, etc.</p>
-      <!-- Add more content about the project here -->
-    </section>
-    </div>
-    <footer>
-      <p>© 2025 Junu Kasim. All rights reserved.</p>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="project-title">VHDL-Design of a RISC Processor Core</h1>
+          <p class="project-subtitle">
+            Design, implement and verify a custom Reduced Instruction Set
+            Computer (RISC) to execute a given set of software instructions. The
+            processor core uses a ROM (Read Only Memory) to fetch instructions
+            and a RAM (Random Access Memory) to store results and operands.
+          </p>
+
+          <!-- Technology Badges -->
+          <div class="tech-badges">
+            <span class="tech-badge">PrimeTime</span>
+            <span class="tech-badge">VHDL</span>
+            <span class="tech-badge">Innovus</span>
+            <span class="tech-badge">Calibre</span>
+            <span class="tech-badge">Design Compiler</span>
+          </div>
+
+          <!-- GitHub Link -->
+          <div class="github-link-container">
+            <a
+              href="https://github.com/kasijun/"
+              target="_blank"
+              class="github-link"
+            >
+              <i class="fab fa-github"></i> View Full Project on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Overview -->
+      <section class="content-section">
+        <h2 class="section-title">Project Overview</h2>
+        <div class="section-content">
+          <p>
+            Estimate a circuit’s power consumption and to evaluate power saving
+            measures, the actual power consumption has to be analyzed at all
+            different stages in the design flow. The methods used have to take
+            into account the available relevant parameters for power consumption
+            at each stage of the design flow. For a high level digital design
+            flow, there are three dominant parameters:  Switching activity of a
+            net  intrinsic power consumption of a gate  parasitic capacitance
+            of a net These parameters have to be refined to better accuracy
+            during the flow from RTL VHDL code to a chip layout (GDS). To do so
+            and to actually calculate and analyze the power consumption,
+            different data formats and different tools are used at each level
+          </p>
+
+          <div class="image-container">
+            <img
+              src="assets/adc/iadc_risc_processor.png"
+              alt="11-bit Dual-slope ADC Pin Diagram"
+              class="content-image"
+              style="
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: 60%;
+              "
+            />
+            <div class="image-caption">risc-processor Diagram</div>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="assets/adc/image.png"
+              alt="Block Diagram"
+              class="content-image"
+              style="width: 800px; height: auto"
+            />
+            <div class="image-caption">Block diagram</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Circuit Design -->
+      <section class="content-section card">
+        <h2 class="section-title">Circuit Design</h2>
+        <div class="section-content">
+          <div class="two-column-grid">
+            <div class="image-container">
+              <img
+                src="assets/schematic.png"
+                alt="Schematic"
+                class="content-image"
+              />
+              <p class="image-caption">Schematic</p>
+            </div>
+            <div class="image-container">
+              <img
+                src="assets/image.png"
+                alt="Circuit Layout Image"
+                class="content-image"
+              />
+              <p class="image-caption">Layout Image</p>
+            </div>
+          </div>
+
+          <h3 class="content-subtitle">Key Circuits</h3>
+          <ul class="content-list">
+            <!-- You can list key circuits here -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Layout -->
+      <section class="content-section">
+        <h2 class="section-title">Layout Implementation</h2>
+        <div class="section-content">
+          <p>description of the layout implementation process..</p>
+          <div class="image-container">
+            <img
+              src="assets/layout-shot.png"
+              alt="Full chip layout"
+              class="content-image"
+            />
+            <p class="image-caption">Full chip layout</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="content-section card">
+        <h2 class="section-title">Results</h2>
+        <div class="section-content">
+          <div class="two-column-grid">
+            <div class="image-container">
+              <img
+                src="assets/fft-result.png"
+                alt="FFT Result"
+                class="content-image"
+              />
+              <p class="image-caption">Output</p>
+            </div>
+            <div class="image-container">
+              <img
+                src="assets/dnl-inl-plot.png"
+                alt="DNL/INL Plot"
+                class="content-image"
+              />
+              <p class="image-caption">Results</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Team -->
+      <section class="content-section">
+        <h2 class="section-title">Project Team</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="assets/team-photo1.jpg" alt="Team working in lab" />
+            <div class="gallery-caption">
+              Design review session with team members
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/lab-photo1.jpg" alt="Lab equipment" />
+            <div class="gallery-caption">Test setup with evaluation board</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Navigation -->
+      <section class="content-section">
+        <div class="project-navigation">
+          <a href="index.html" class="btn btn-secondary">
+            <i class="fas fa-th"></i> All Projects
+          </a>
+          <div class="nav-buttons">
+            <a href="project2.html" class="btn btn-primary">
+              <i class="fas fa-arrow-left" style="margin-right: 6px"></i>
+              Previous
+            </a>
+            <a href="project1.html" class="btn btn-primary">
+              Next Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Print/PDF Button -->
+    <button
+      onclick="window.print()"
+      class="print-button"
+      title="Print or Save as PDF"
+    >
+      <i class="fas fa-print"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="social-links">
+          <a
+            href="https://github.com/kasijun"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/junukasim"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:kasimjunu@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <p class="copyright">© 2025 Junu Kasim. All rights reserved.</p>
+      </div>
+      <hr style="margin: 2em auto; width: 60%; border: 0.5px solid #ddd" />
+      <section
+        id="colophon"
+        style="text-align: center; font-size: 0.85em; color: #666"
+      >
+        <p>
+          This site was built from scratch using HTML & CSS and is hosted on
+          <a
+            href="https://pages.github.com/"
+            target="_blank"
+            style="color: #007acc"
+            >GitHub Pages</a
+          >.
+        </p>
+      </section>
+    </footer>
   </body>
 </html>
